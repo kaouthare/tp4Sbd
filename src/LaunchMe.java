@@ -23,15 +23,21 @@ public class LaunchMe {
 	static boolean test= true;
 	static double epsilonMax;
 	
+	//constructeur
+	public LaunchMe(){
+		
+	}
+	
 	public static void main(String[] args) {
 		//valeur test 
-		n=5;
+		n=1000;
 		m=10;
-		epsilon=0.1;
+		epsilon=0.0001;
 		epsilonMax=1;
 		
 		//crÃ©er un tableau d'entier 
 		int monTableau[ ] = new int[n];
+		int sa=0;
 		Random random = new Random();
 		for (int i=0; i<n; i++){
 			//pour un entier entre 0 et m
@@ -39,16 +45,33 @@ public class LaunchMe {
 			monTableau[i]= (int)(Math.random() * m);
 			//gÃ©nÃ©rer les elements du tableau 
 			
-			//i= mmin + random.nextInt((m-mmin)+1);
-
-			
-			
-					
+			if(monTableau[i]>=m/2){
+				sa++;
+			}
+	
 		}
 
 		
 		System.out.println (Arrays.toString(monTableau ));
+		Laplace laplace= new Laplace(epsilon);
+		System.out.println("perturbation générée:" +sa);
 		
+		double valPerturbee=0;
+		double somValP=0;
+		double moyValP=0;
+		double ratioValP=0;
+		for(int i=1; i<=50; i++){
+			valPerturbee= sa + laplace.genNoise(sa, 1);
+			somValP +=valPerturbee;
+			moyValP= somValP/i;
+			ratioValP=moyValP/sa;
+			System.out.println(ratioValP);
+			System.out.println(i+"; valeur perturbee: " +valPerturbee+ "; la somme: " +somValP+ "; la moyenne" +moyValP+ "; la ratio:" +ratioValP+";");
+			
+			
+		}
+		/** des couters et une sommes des valerus du tableau **/
+		/*
 		int counter =0;
 		for (int i=0; i<n; i++){
 			if (monTableau[i] > m/2){
@@ -88,7 +111,7 @@ public class LaunchMe {
 				Laplace.genNoise(counter3, epsilon));
 		System.out.print("\n");
 		
-		
+		*/
 		
 			
 	}
