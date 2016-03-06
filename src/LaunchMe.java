@@ -145,12 +145,136 @@ public class LaunchMe {
 		}
 		
 		
+		//*******************************Q7***********//
 		
+		System.out.println("*********************Q7***********");
 		
+		//tableau avec n=1000, m=1000, epsilon =0.0001
+		monTableau T7= new monTableau (1000,1000);
+		sa= 1000;
+		//activer le mode test
+		Laplace.setTest(true);
 		
+		double erreur=0;
+		double moyErreur=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreur+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreur= erreur/i;
+		}
 		
+		System.out.println("la taille du tableau  : " +T7.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("la somme agregats : " +T7.getSomme() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreur );
 		
+		//******Question 10*******//
 		
+		System.out.println("*******************Question10**********");
+		
+		// tableaux de taille differentes
+		System.out.println("le tableau t10***" );
+		monTableau T10= new monTableau(100, 1000);
+		sa=T10.getM();
+		Laplace.setTest(true);
+		
+		double erreurT10=0;
+		double moyErreurT10=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreurT10+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreurT10= erreurT10/i;
+		}
+		
+		double ratioT10= moyErreurT10/T10.getSomme();
+		System.out.println("la taille du tableau  : " +T10.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("la somme agregats : " +T10.getSomme() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT10 );
+		System.out.println("le ratio  : " +ratioT10 );
+		
+		System.out.println("le tableau t11***" );
+		monTableau T11= new monTableau(1000, 1000);
+		
+		sa=T11.getM();
+		Laplace.setTest(true);
+		
+		double erreurT11=0;
+		double moyErreurT11=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreurT11+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreurT11= erreurT11/i;
+		}
+		
+		double ratioT11= moyErreurT11/T11.getSomme();
+		System.out.println("la taille du tableau  : " +T11.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("la somme agregats : " +T11.getSomme() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT11 );
+		System.out.println("le ratio  : " +ratioT11 );
+		
+		System.out.println("le tableau t12***" );
+		monTableau T12= new monTableau(10000, 1000);
+		sa=T12.getM();
+		Laplace.setTest(true);
+		
+		double erreurT12=0;
+		double moyErreurT12=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreurT12+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreurT10= erreurT12/i;
+		}
+		
+		double ratioT12= moyErreurT12/T12.getSomme();
+		System.out.println("la taille du tableau  : " +T12.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("la somme agregats : " +T12.getSomme() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT12 );
+		System.out.println("le ratio  : " +ratioT12 );
+		
+		System.out.println("le tableau t13***" );
+		monTableau T13= new monTableau(100000, 1000);
+		
+		sa=T13.getM();
+		Laplace.setTest(true);
+		
+		double erreurT13=0;
+		double moyErreurT13=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreurT13+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreurT13= erreurT13/i;
+		}
+		
+		double ratioT13= moyErreurT13/T13.getSomme();
+		System.out.println("la taille du tableau  : " +T13.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("la somme agregats : " +T13.getSomme() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT13 );
+		System.out.println("le ratio  : " +ratioT13 );
+		
+		System.out.println("le tableau t14***" );
+		monTableau T14= new monTableau(1000000, 1000);
+		
+		sa=T14.getM();
+		Laplace.setTest(true);
+		
+		double erreurT14=0;
+		double moyErreurT14=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreurT14+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreurT14= erreurT14/i;
+		}
+		
+		double ratioT14= moyErreurT14/T14.getSomme();
+		System.out.println("la taille du tableau  : " +T14.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("la somme agregats : " +T14.getSomme() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT14 );
+		System.out.println("le ratio  : " +ratioT14 );
 				
 				
 		
