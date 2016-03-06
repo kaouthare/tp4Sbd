@@ -101,6 +101,56 @@ public class LaunchMe {
 				//Affichage des valeurs 
 		System.out.println("affichage valeur perturbée :"+VP9+ " avec 0.01 pour epsilon la perturbation est " +PG9);
 				
+		//***********question 6**********//
+		
+		System.out.println("***********************************");
+		//tableau pour la question 6 avec n =1000 et m =1000 
+		monTableau T6= new monTableau (1000,1000);
+		
+		Laplace L6= new Laplace(epsilon);
+		//valeur perturbée 
+		double valPert =0;
+		//la somme des valeurs perturbées
+		double sumValPert =0;
+		//la moyenne des valeurs perturbees
+		double moyValPert=0;
+		//le ratio des valeurs perturbees
+		double ratio=0;
+		
+		//le nombre de valeurs perturbees
+		int nbValPert=0;
+		//le nombre des ratio qui sont entre 0.9 et 1.1
+		int nbRatio=0;
+		while(nbRatio<5 && L6.getEpsilonBudget()>=0){
+			valPert=T6.getConter()+L6.genNoise(sa, epsilon/4);
+			nbValPert++;
+			sumValPert+=valPert;
+			moyValPert=sumValPert/nbValPert;
+			ratio=moyValPert/T6.getConter();
+			
+			if(Math.abs(ratio-1)<=0.1){
+				nbRatio++;
+			}else{
+				nbRatio=0;
+			}
+			System.out.println(ratio);
+		}
+		
+		if(nbRatio==5){
+			System.out.println("la somme est " +T6.getConter()+ ".");
+			System.out.println("on obtient " +nbValPert+ " Perturbation");
+			
+		}else {
+			System.out.println("autres ");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 				
 				
 		
