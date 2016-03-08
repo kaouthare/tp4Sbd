@@ -275,6 +275,115 @@ public class LaunchMe {
 		System.out.println("la somme agregats : " +T14.getSomme() );
 		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT14 );
 		System.out.println("le ratio  : " +ratioT14 );
+		
+		
+		
+		
+System.out.println("*******************Question10 Counter**********");
+		
+		// tableaux de taille differentes
+		System.out.println("le tableau t10***" );
+		monTableau T10C= new monTableau(100, 1000);
+		sa=1;
+		Laplace.setTest(true);
+		
+		double erreurT10C=0;
+		double moyErreurT10C=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreurT10C+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreurT10C= erreurT10C/i;
+		}
+		
+		double ratioT10C= moyErreurT10C/T10C.getConter();
+		System.out.println("la taille du tableau  : " +T10C.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("le conter agregats : " +T10C.getConter() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT10C );
+		System.out.println("le ratio  : " +ratioT10C );
+		
+		System.out.println("le tableau t11***" );
+		monTableau T11C= new monTableau(1000, 1000);
+		
+		sa=1;
+		Laplace.setTest(true);
+		
+		double erreurT11C=0;
+		double moyErreurT11C=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreurT11C+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreurT11C= erreurT11C/i;
+		}
+		
+		double ratioT11C= moyErreurT11C/T11C.getConter();
+		System.out.println("la taille du tableau  : " +T11C.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("le conter agregats : " +T11C.getConter() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT11C );
+		System.out.println("le ratio  : " +ratioT11C );
+		
+		System.out.println("le tableau t12***" );
+		monTableau T12C= new monTableau(10000, 1000);
+		sa=1;
+		Laplace.setTest(true);
+		
+		double erreurT12C=0;
+		double moyErreurT12C=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreurT12C+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreurT12C= erreurT12C/i;
+		}
+		
+		double ratioT12C= moyErreurT12C/T12C.getConter();
+		System.out.println("la taille du tableau  : " +T12C.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("le conter agregats : " +T12C.getConter() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT12C );
+		System.out.println("le ratio  : " +ratioT12C );
+		
+		System.out.println("le tableau t13***" );
+		monTableau T13C= new monTableau(100000, 1000);
+		
+		sa=1;
+		Laplace.setTest(true);
+		
+		double erreurT13C=0;
+		double moyErreurT13C=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreurT13C+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreurT13C= erreurT13C/i;
+		}
+		
+		double ratioT13C= moyErreurT13C/T13C.getConter();
+		System.out.println("la taille du tableau  : " +T13C.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("le conter agregats : " +T13C.getConter() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT13C );
+		System.out.println("le ratio  : " +ratioT13C );
+		
+		System.out.println("le tableau t14***" );
+		monTableau T14C= new monTableau(1000000, 1000);
+		
+		sa=1;
+		Laplace.setTest(true);
+		
+		double erreurT14C=0;
+		double moyErreurT14C=0;
+		for(int i=1; i<=1000; i++){
+			//lerreur de perturbation est la valeur absolue de la perturbation
+			erreurT14C+=Math.abs(Laplace.genNoise(sa, epsilon/4));
+			moyErreurT14C= erreurT14C/i;
+		}
+		
+		double ratioT14C= moyErreurT14C/T14C.getConter();
+		System.out.println("la taille du tableau  : " +T14C.getN() );
+		System.out.println("Sensibilité : " +sa );
+		System.out.println("le conter agregats : " +T14C.getConter() );
+		System.out.println("moyenne d'erreur pour un agregat : " +moyErreurT14C );
+		System.out.println("le ratio  : " +ratioT14C );
 				
 				
 		
